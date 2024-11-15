@@ -1,4 +1,8 @@
+"use client"
+
 import Image from "next/image";
+import { TypeAnimation } from 'react-type-animation';
+import { useState } from 'react';
 
 const PILLARS = [
   {
@@ -19,6 +23,7 @@ const PILLARS = [
 ];
 
 const Home = function Home() {
+  const [showSecondText, setShowSecondText] = useState(false);
   return (
     <>
       <section className="relative flex w-full h-[95vh] items-center justify-center px-8 text-center overflow-hidden">
@@ -36,20 +41,40 @@ const Home = function Home() {
         {/* Text Content */}
         <div className="relative z-10 flex flex-col items-center px-4">
           <h1 className="text-center text-4xl font-extrabold text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            Theta Tau
+          Theta Tau
           </h1>
-          <p className="mt-4 text-center text-lg font-medium text-gray-300 sm:text-xl md:text-2xl lg:text-3xl">
-            Premier Professional Co-ed Engineering Fraternity at San José State University
-          </p>
+          <TypeAnimation
+            className="ml-2 mt-4 text-center text-lg font-medium text-gray-300 sm:text-xl md:text-2xl lg:text-3xl"
+            sequence={[
+              'San José State University',
+              () => {
+                // Add a delay before showing the second text
+                setTimeout(() => setShowSecondText(true), 1000); // 1000 ms = 1 second delay
+              }
+            ]}
+            speed={30}
+            repeat={1}
+            wrapper="p"
+          />
+          {showSecondText && (
+            <TypeAnimation
+              className="ml-2 mt-4 text-center text-lg font-medium text-gray-300 sm:text-xl md:text-2xl lg:text-3xl"
+              sequence={['A Professional Co-ed Engineering Fraternity']}
+              speed={30}
+              repeat={1}
+              wrapper="p"
+            />
+          )}
         </div>
       </section>
       <section className="flex w-full flex-col items-center justify-center bg-gray-700 px-8 py-16 text-center text-white">
         <div className="w-full max-w-4xl mb-8">
-          <h4 className="text-center font-bold sm:text-2xl md:text-3xl lg:text-4xl">Why Theta Tau?</h4>
+          <h4 className="text-center font-bold sm:text-2xl md:text-3xl lg:text-4xl">The premier professional engineering fraternity</h4>
         </div>
         <div className="flex w-full max-w-4xl items-center justify-between gap-8 text-left">
           <div className="w-1/2">
-            <p className="font-light">
+            <h1 className="font-bold mb-4 text-yellow-400 sm:text-base md:text-lg lg:text-xl">WHO ARE WE?</h1>
+            <p className="mt-2 font-light">
               Theta Tau is a co-ed professional engineering fraternity at San Jose State University dedicated to fostering a close-knit brotherhood of like-minded individuals. 
               Our purpose is to develop and uphold a high standard of professional excellence while nurturing a community that encourages members to support each other’s growth, 
               both professionally and socially. Through mentorship, networking, and community service, Theta Tau empowers its members to excel in their careers and make a positive 
