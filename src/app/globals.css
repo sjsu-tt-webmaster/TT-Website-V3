@@ -5,3 +5,11 @@
 body {
   @apply font-sans min-h-screen bg-gray-900 tracking-tight text-white;
 }
+
+@layer base {
+  :root {
+    --color-tt-dark-red: 139, 0, 0; /* RGB format for compatibility */
+    --color-tt-gold: 255, 204, 51;
+    --color-tt-off-white: 237, 234, 181;
+  }
+}

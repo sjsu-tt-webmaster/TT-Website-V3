@@ -11,12 +11,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        white: "#fff",
-        black: "#000",
-        gray: colors.neutral, // keep Tailwind's neutral color palette for grays
-        darkRed: "#8B0000",
-        gold: "#FFCC33",
-        offWhite: "#EDEAB5",
+        gray: colors.neutral, 
+        'tt-dark-red': '#8b0000',
+        'tt-gold': '#ffcc33',
+        'tt-off-white': '#edeab5',
       },
       fontFamily: {
         sans: ["Arial", ...defaultTheme.fontFamily.sans],
