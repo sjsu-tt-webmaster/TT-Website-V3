@@ -114,7 +114,7 @@ export default function AboutPage() {
             {
               title: "Spring 2018: The Spark of Inspiration",
               content:
-                "Mark Muendelein, inspired by the brothers of the Epsilon Delta Chapter at UC San Diego, envisioned a professional engineering fraternity at San José State University.",
+                "Markuendelein, inspired by the brothers of the Epsilon Delta Chapter at UC San Diego, envisioned a professional engineering fraternity at San José State University.",
             },
             {
               title: "Summer 2018: Building Connections",
